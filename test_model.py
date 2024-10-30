@@ -34,7 +34,7 @@ model.roi_heads.mask_predictor = torchvision.models.detection.mask_rcnn.MaskRCNN
 )
 
 # Load the trained model weights
-model.load_state_dict(torch.load(model_path, map_location=device))
+model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
 model.to(device)
 model.eval()  # Set model to evaluation mode
 
